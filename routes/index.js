@@ -17,10 +17,10 @@ const html = `
 </header>
 <main>
     <div>
-        <a href="http://localhost:3000/add-post">
+        <a href="http://localhost:3000/add-blog">
             Add a post
         </a>
-        <a href="http://localhost:3000/see-posts">
+        <a href="http://localhost:3000/view-blogs">
             See posts
         </a>
     </div>
