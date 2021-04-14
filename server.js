@@ -2,9 +2,9 @@ const express = require("express");
 
 const server = express();
 
-server.get("/", (request, response) => {
-    response.send("");
-  });
+// server.get("/", (request, response) => {
+//     response.send("");
+//   });
   
   const PORT = 3000;
   
@@ -13,3 +13,7 @@ server.get("/", (request, response) => {
   const staticHandler = express.static("public");
 
   server.use(staticHandler);
+
+  const homepageHandler = require("./routes/index.js")
+
+  server.get("/", homepageHandler);

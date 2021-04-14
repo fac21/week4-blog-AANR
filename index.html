@@ -1,6 +1,3 @@
-// const staticHandler = express.static("../public");
-
-const html = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +20,3 @@ const html = `
     
 </body>
 </html>
-`
-
-function homepageHandler(request, response){
-    response.end(html);
-}
-
-module.exports =  homepageHandler
