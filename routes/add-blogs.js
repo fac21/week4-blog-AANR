@@ -12,28 +12,29 @@ const html = `
         <meta name="description" content="">
         <title>Porky Pies | Add blog</title>
       </head>
-      <body class="flex__column">
+      <body class="flex__column margin-top-4 stack">
 
       <header>
-      <h1>Add blog</h1>
-        <nav>
-            <a class="content_link" href="/view-blogs">
-                    View Blog
-                </a>
-                <a class="content_link" href="/">
-                    Home
-                </a>
-            </nav>
+     
+      <nav class="flex__row ">
+      <a class="content_link" href="/view-blogs">
+              View Blog
+          </a>
+          <a class="content_link" href="/">
+              Home
+          </a>
+      </nav>
+      <h1 class="margin-top-4">Add blog</h1>
       </header>
         <main class="content">
-        <form method="POST" id="blog-form" action="/view-blogs">
+        <form class="flex__column stack-sm " method="POST" id="blog-form" action="/view-blogs">
           <label for="title">Blog Title</label>
           <input id="title" name="title" required>
           <label for="content">Blog content</label>
           <input id="content" name="content" required>
           <label for="photo">Cover Photo</label>
           <input id="photo" name="photo" required>
-          <button type="submit"> Post</button>
+          <button class="form__button" type="submit"> Post</button>
         </form>
         
         </main>  
