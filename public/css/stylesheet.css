@@ -1,8 +1,23 @@
 :root {
+  --bg: #ffb1be;
+  --primary-clour: #ff526f;
+  --font-primary: ;
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.flex__column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+}
+
+
+.content_link{
+
 }
