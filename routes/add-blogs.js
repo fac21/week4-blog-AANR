@@ -34,7 +34,6 @@ function addBlogs (request, response) {
 function objectAdd(request, response){
   const obj = Object.assign({},request.body)
   blogPosts.unshift(obj)
-  console.log(obj , blogPosts)
   response.redirect("/view-blogs");
 }
 module.exports = {addBlogs: addBlogs, objectAdd: objectAdd}

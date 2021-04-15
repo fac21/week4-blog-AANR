@@ -1,10 +1,15 @@
 const blogPosts = require("./blogs-structure.js");
 
+function deleteHandler(request, response) {
+  const ID = request.body.blogID;
 
-function post(request,response) {
-    console.log("working")
-    delete blogPosts["blog1"]
-    response.redirect("/view-blogs")
+  blogPosts.forEach((blog, index) => {
+    if (blog.id === ID) blogPosts.splice(index, 1);
+  });
+
+  // blogPosts.filter((blog) => blog.id !== ID);
+
+  response.redirect("/view-blogs");
 }
 
-module.exports = { post };
+module.exports = deleteHandler;
