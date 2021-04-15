@@ -45,21 +45,25 @@ function createHtml(items) {
       <meta name="description" content="">
       <title>Porky Pies | View Blogs</title>
     </head>
-    <body class="flex__column">
-      <header>
-        <h1>View Blogs</h1>
-        <section>
-            <a class="content_link" href="/add-blog">
-                Add a post
-            </a>
-            <a class="content_link" href="/">
-                Home
-            </a>
-        </section>
-      </header>
-      
-      <main class="content">
-        <ul>${items}</ul>             
+    <body class="flex__column margin-top-4">
+
+
+    <header>
+     
+    <nav class="flex__row">
+    <a class="content_link" href="/add-blog">
+            Add Blog
+        </a>
+        <a class="content_link" href="/">
+            Home
+        </a>
+    </nav>
+    <h1 class="margin-top-4">Blogs</h1>
+    </header>
+
+     
+      <main class="content margin-top-2">
+        <ul class="stack-sm">${items}</ul>             
       </main>  
     </body>
   </html>`;

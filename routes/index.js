@@ -10,13 +10,13 @@ const html = `
         <meta name="description" content="">
         <title>Porky Pies</title>
     </head>
-    <body class="flex__column">
+    <body class="flex__column margin-top-4 stack">
         <header>
             <h1>Porky Pies</h1>
             <h2>The micro blog for micro pigs!</h2>
         </header>
         <main class="content">
-            <section class="flex__column">
+            <section class="flex__column stack">
                 <a class="content_link" href="/add-blog">
                     Add a post
                 </a>
