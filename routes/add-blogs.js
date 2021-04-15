@@ -1,5 +1,5 @@
 const blogPosts = require("./blogs-structure.js");
-
+console.log(blogPosts)
 function addBlogs (request, response) {
   const html = `
     <!doctype html>
@@ -22,7 +22,7 @@ function addBlogs (request, response) {
           <input id="content" name="content" required>
           <label id="photo">Cover Photo</label>
           <input id="photo" name="photo" required>
-          <button> <a href="/view-blogs">Post </a></button>
+          <button type="submit"> Post</button>
 
         </form>
       </body>
@@ -30,4 +30,10 @@ function addBlogs (request, response) {
   response.end(html);
  
 }
-module.exports = addBlogs;
+
+function objectAdd(request, response){
+  const obj = Object.assign({},request.body)
+  blogPosts.unshift(obj)
+  response.redirect("/view-blogs");
+}
+module.exports = {addBlogs: addBlogs, objectAdd: objectAdd}
