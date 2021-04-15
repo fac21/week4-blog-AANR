@@ -15,7 +15,7 @@ server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
 server.use(staticHandler);
 
-server.get(process.env.HOME, homepageHandler);
+server.get("/", homepageHandler);
 
 server.get("/add-blog", addBlog.get);
 
