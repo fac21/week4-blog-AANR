@@ -6,9 +6,23 @@ function viewBlogs(request, response) {
   response.send(createHtml(newItems));
 }
 
+// function addItems(items) {
+//   for (const blog of Object.values(blogPosts)) {
+//     items += `<li>${blog.title}</li>`;
+//   }
+//   return items;
+// }
+
 function addItems(items) {
   for (const blog of Object.values(blogPosts)) {
-    items += `<li>${blog.title}</li>`;
+    items += `<li>
+    ${blog.title}
+    <form action="/delete-blog" method="POST" style="display: inline;">
+            <button name="name" value="${blog.title}" aria-label="Delete ${blog.title}">
+              &times;
+            </button>
+          </form>
+          </li>`;
   }
   return items;
 }
