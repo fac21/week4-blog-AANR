@@ -10,11 +10,12 @@ const homepageHandler = require("./routes/index.js");
 
 const PORT = process.env.PORT || 3000;
 
+
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
 server.use(staticHandler);
 
-server.get("/", homepageHandler);
+server.get(process.env.HOME, homepageHandler);
 
 server.get("/add-blog", addBlog.get);
 
