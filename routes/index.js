@@ -16,7 +16,7 @@ const html = `
             <h2>The micro blog for micro pigs!</h2>
         </header>
         <main class="content">
-            <section>
+            <section class="flex__column">
                 <a class="content_link" href="/add-blog">
                     Add a post
                 </a>
