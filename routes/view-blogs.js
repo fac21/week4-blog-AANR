@@ -17,8 +17,10 @@ function addItems(items) {
   for (const blog of Object.values(blogPosts)) {
     items += `
     <li id="${blog.id}">
-    ${blog.title}
-    ${blog.content}
+
+    <h3>${blog.title}</h3>
+    <p>${blog.content}</p>
+    
     ${blog.photo}
       <form action="/delete-blog" method="POST" style="display: inline;">
         <button name="blogID" value="${blog.id}" aria-label="Delete ${blog.title}">
@@ -41,10 +43,24 @@ function createHtml(items) {
       <link rel="stylesheet" href="./css/stylesheet.css" />
       <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
       <meta name="description" content="">
-      <title></title>
+      <title>Porky Pies | View Blogs</title>
     </head>
-    <body>
-      <ul>${items}</ul>  
+    <body class="flex__column">
+      <header>
+        <h1>View Blogs</h1>
+        <section>
+            <a class="content_link" href="/add-blog">
+                Add a post
+            </a>
+            <a class="content_link" href="/">
+                Home
+            </a>
+        </section>
+      </header>
+      
+      <main class="content">
+        <ul>${items}</ul>             
+      </main>  
     </body>
   </html>`;
 }

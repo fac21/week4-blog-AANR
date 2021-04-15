@@ -10,20 +10,20 @@ const html = `
         <meta name="description" content="">
         <title>Porky Pies</title>
     </head>
-    <body>
+    <body class="flex__column">
         <header>
             <h1>Porky Pies</h1>
             <h2>The micro blog for micro pigs!</h2>
         </header>
-        <main>
-            <div>
-                <a href="/add-blog">
+        <main class="content">
+            <section class="flex__column">
+                <a class="content_link" href="/add-blog">
                     Add a post
                 </a>
-                <a href="/view-blogs">
+                <a class="content_link" href="/view-blogs">
                     See posts
                 </a>
-            </div>
+            </section>
         </main>    
     </body>
 </html>

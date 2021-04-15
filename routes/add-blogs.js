@@ -1,7 +1,6 @@
 const blogPosts = require("./blogs-structure.js");
-console.log(blogPosts)
-function addBlogs (request, response) {
-  const html = `
+
+const html = `
     <!doctype html>
     <html>
       <head>
@@ -11,22 +10,38 @@ function addBlogs (request, response) {
         <link rel="stylesheet" href="./css/stylesheet.css" />
         <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
         <meta name="description" content="">
-        <title>Add blog</title>
+        <title>Porky Pies | Add blog</title>
       </head>
-      <body>
-        <h1>Add blog</h1>
+      <body class="flex__column">
+
+      <header>
+      <h1>Add blog</h1>
+        <nav>
+            <a class="content_link" href="/view-blogs">
+                    View Blog
+                </a>
+                <a class="content_link" href="/">
+                    Home
+                </a>
+            </nav>
+      </header>
+        <main class="content">
         <form method="POST" id="blog-form" action="/view-blogs">
-          <label id="title">Blog Title</label>
+          <label for="title">Blog Title</label>
           <input id="title" name="title" required>
-          <label id="content">Blog content</label>
+          <label for="content">Blog content</label>
           <input id="content" name="content" required>
-          <label id="photo">Cover Photo</label>
+          <label for="photo">Cover Photo</label>
           <input id="photo" name="photo" required>
           <button type="submit"> Post</button>
-
         </form>
+        
+        </main>  
       </body>
     </html>`;
+
+function addBlogs (request, response) {
+  
   response.end(html);
  
 }
@@ -36,7 +51,6 @@ function objectAdd(request, response){
   obj.id = getId(obj.title)
   blogPosts.unshift(obj)
   response.redirect("/view-blogs");
-  console.log(obj)
 }
 
 function getId(title){
