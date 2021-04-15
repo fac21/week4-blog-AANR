@@ -48,7 +48,15 @@ function addBlogs (request, response) {
 
 function objectAdd(request, response){
   const obj = Object.assign({},request.body)
+  obj.id = getId(obj.title)
   blogPosts.unshift(obj)
   response.redirect("/view-blogs");
+  console.log(obj)
 }
+
+function getId(title){
+const number = Math.floor((Math.random() * 1000) +1)
+return title.slice(0, 5) + number
+}
+
 module.exports = {addBlogs: addBlogs, objectAdd: objectAdd}
