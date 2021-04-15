@@ -51,7 +51,6 @@ function objectAdd(request, response){
   obj.id = getId(obj.title)
   blogPosts.unshift(obj)
   response.redirect("/view-blogs");
-  console.log(obj)
 }
 
 function getId(title){
