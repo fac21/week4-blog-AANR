@@ -5,6 +5,7 @@ const blogPosts = require("./routes/blogs-structure.js");
 const viewBlogs = require("./routes/view-blogs.js");
 const deleteBlog = require("./routes/delete-blog.js");
 
+
 const staticHandler = express.static("public");
 
 const homepageHandler = require("./routes/index.js");
@@ -17,16 +18,14 @@ server.use(staticHandler);
 
 server.get("/", homepageHandler);
 
-server.get("/add-blog", addBlogs);
+server.get("/add-blog", addBlogs.addBlogs);
 
 server.get("/view-blogs", viewBlogs);
 
 
-const bodyParser = express.urlencoded();
+const bodyParser = express.urlencoded({ extended: false });
 
-server.post("/add-blog", bodyParser, (request, response) => {
-  console.log(request.body)
-});
+server.post("/view-blogs", bodyParser, addBlogs.objectAdd);
 
 
 server.post("/delete-blog", bodyParser, deleteBlog.post);
