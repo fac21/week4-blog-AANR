@@ -15,14 +15,15 @@ function viewBlogs(request, response) {
 
 function addItems(items) {
   for (const blog of Object.values(blogPosts)) {
-    items += `<li>
-    ${blog.title}
-    <form action="/delete-blog" method="POST" style="display: inline;">
-            <button name="name" value="${blog.title}" aria-label="Delete ${blog.title}">
-              &times;
-            </button>
-          </form>
-          </li>`;
+    items += `
+    <li id="${blog.id}">
+      ${blog.title}
+      <form action="/delete-blog" method="POST" style="display: inline;">
+        <button name="blogID" value="${blog.id}" aria-label="Delete ${blog.title}">
+          &times;
+        </button>
+      </form>
+    </li>`;
   }
   return items;
 }
@@ -46,4 +47,4 @@ function createHtml(items) {
   </html>`;
 }
 
-module.exports = viewBlogs ;
+module.exports = viewBlogs;
