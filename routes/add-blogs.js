@@ -22,7 +22,7 @@ function addBlogs (request, response) {
           <input id="content" name="content" required>
           <label id="photo">Cover Photo</label>
           <input id="photo" name="photo" required>
-          <button> Post</button>
+          <button type="submit"> Post</button>
 
         </form>
       </body>
@@ -35,6 +35,6 @@ function objectAdd(request, response){
   const obj = Object.assign({},request.body)
   blogPosts.unshift(obj)
   console.log(obj , blogPosts)
-
+  response.redirect("/view-blogs");
 }
 module.exports = {addBlogs: addBlogs, objectAdd: objectAdd}
