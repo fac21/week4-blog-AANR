@@ -1,6 +1,6 @@
 const blogPosts = require("./blogs-structure.js");
 
-function get(request, response) {
+function viewBlogs(request, response) {
   let items = "";
   let newItems = addItems(items);
   response.send(createHtml(newItems));
@@ -32,4 +32,4 @@ function createHtml(items) {
   </html>`;
 }
 
-module.exports = { get };
+module.exports = viewBlogs ;

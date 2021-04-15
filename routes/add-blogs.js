@@ -1,6 +1,6 @@
 const blogPosts = require("./blogs-structure.js");
 
-function get(request, response) {
+function addBlogs (request, response) {
   const html = `
     <!doctype html>
     <html>
@@ -15,17 +15,19 @@ function get(request, response) {
       </head>
       <body>
         <h1>Add blog</h1>
-        <form method="POST" id="blog-form">
+        <form method="POST" id="blog-form" action="/view-blogs">
           <label id="title">Blog Title</label>
           <input id="title" name="title" required>
           <label id="content">Blog content</label>
           <input id="content" name="content" required>
           <label id="photo">Cover Photo</label>
           <input id="photo" name="photo" required>
-          <button>Search</button>
+          <button> <a href="/view-blogs">Post </a></button>
+
         </form>
       </body>
     </html>`;
   response.end(html);
+ 
 }
-module.exports = { get };
+module.exports = addBlogs;
