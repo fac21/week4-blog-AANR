@@ -6,13 +6,6 @@ function viewBlogs(request, response) {
   response.send(createHtml(newItems));
 }
 
-// function addItems(items) {
-//   for (const blog of Object.values(blogPosts)) {
-//     items += `<li>${blog.title}</li>`;
-//   }
-//   return items;
-// }
-
 function addItems(items) {
   for (const blog of Object.values(blogPosts)) {
     items += `
