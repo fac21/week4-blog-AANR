@@ -42,7 +42,7 @@ function createHtml(items) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="./css/stylesheet.css" />
       <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-      <meta name="description" content="">
+      <meta name="description" content="Porky-pies: a micro-blogging site about micro-pigs and their owners.">
       <title>Porky Pies | View Blogs</title>
     </head>
     <body class="flex__column margin-top-4">
